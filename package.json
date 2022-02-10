@@ -1,0 +1,19 @@
+{
+  "name": "sti-frontend",
+  "version": "1.0.0",
+  "description": "Frontend app",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hansdavidsson/sti-frontend.git"
+  },
+  "author": "Hans Davidsson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hansdavidsson/sti-frontend/issues"
+  },
+  "homepage": "https://github.com/hansdavidsson/sti-frontend#readme"
+}
