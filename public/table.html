@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<p>Click the button to create a TABLE, a TR and a TD element.</p>
+
+<button onclick="createCol()">newColumn</button>
+
+<script>
+function createCol() {
+  var x = document.createElement("TABLE");
+  x.setAttribute("id", "myTable");
+  document.body.appendChild(x);
+
+  var y = document.createElement("TR");
+  y.setAttribute("id", "myTr");
+  document.getElementById("myTable").appendChild(y);
+
+  var z = document.createElement("TD");
+  var t = document.createTextNode("cell");
+  z.appendChild(t);
+  document.getElementById("myTr").appendChild(z);
+}
+</script>
+
+<button onclick="delRow()">deleteRow</button>
+
+<script>
+function delRow() {
+  document.getElementById("myTable").deleteRow(0);
+}
+</script>
+
+<button type="button" onclick="createRow()">newRow</button>
+
+<script>
+function createRow() {
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(0);
+  var cell1 = row.insertCell(0);
+  //var cell2 = row.insertCell(1);
+  cell1.innerHTML = "NEW";
+  //cell2.innerHTML = "NEW CELL2";
+}
+</script>
+
+
+</body>
+</html>
