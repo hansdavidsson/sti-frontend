@@ -1,3 +1,5 @@
+body {background-color: rgb(119, 120, 138);}
+
 table, td {
     border: 0.5px solid black;
     Font:15px Arial, sans-serif;
@@ -14,6 +16,11 @@ table {
 h1 {
     Font:20px Arial, sans-serif; 
     color: indianred;
+}
+
+h2 {
+    Font:20px Arial, sans-serif; 
+    color: rgb(7, 7, 7);
 }
 
 #buttons {
@@ -35,3 +42,12 @@ h1 {
     display: inline-block;
     font-size: 16px;
   }
+
+  #gameSpace {
+    background-color: #0a0a0c; /* Blue */
+    padding: 250px 50px;
+  }
+
+  
+    
+  
