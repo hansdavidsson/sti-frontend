@@ -107,3 +107,6 @@ dist
 .DS_Store
 public/.DS_Store
 public/js/.DS_Store
+
+# Private
+list.txt

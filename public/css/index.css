@@ -1,0 +1,37 @@
+table, td {
+    border: 0.5px solid black;
+    Font:15px Arial, sans-serif;
+}
+
+td {
+    background-color: coral;
+}
+
+table {
+    background-color: rgb(110, 71, 202);
+}
+
+h1 {
+    Font:20px Arial, sans-serif; 
+    color: indianred;
+}
+
+#buttons {
+    Font:30px Arial, sans-serif;
+    background-color: rgb(120, 107, 150);
+}
+
+#hed {
+    background-color: rgb(178, 162, 216);
+}
+
+.button {
+    background-color: #484979; /* Blue */
+    border: 0.5px;
+    color: white;
+    padding: 5px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
