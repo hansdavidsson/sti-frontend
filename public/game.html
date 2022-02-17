@@ -1,18 +1,82 @@
-<!DOCTYPE html>
+
+<!-- random treasure on map
+move mrm to collect the goodies -->
+
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/index.css">
-    <script src="/js/index.js"></script>
+    <script src="/js/game.js"></script>
     <title>Document</title>
 </head>
 <body>
     <h2>Game</h2>
 
     <div id="gameSpace">
+        <p><button onclick="myMove()">Click Me</button></p> 
         <h1>Game Space TBA</h1>
+        <div id="mrm">
+        <img src="https://lh3.googleusercontent.com/8qqfvSBi16sicHTCbC-Gcr73fSNF4SN0bI_8fWVasJW2PHTuCuUTh4Ypnii5wg5q34PLiFfMJC2K0VOFE8pynrG76GkoWSs7jxfRmg=w600" alt="" width="5%" height="5%">
+        </div>
     </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/game.css">
+    <script src="/js/game.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+<p><button onclick="myMove()">Click Me</button></p> 
+<p><button onclick="myMove2()">Click Me</button></p> 
+<p><button onclick="moveRight()">R</button></p> 
+<p><button onclick="moveDown()">D</button></p> 
+<p><button onclick="moveLeft()">L</button></p> 
+<p><button onclick="moveUp()">U</button></p> 
+<!-- <input type="move" onkeydown="myMove()">
+<input type="move2" id="fname" onkeyup="myMove2()"> -->
+
+<div id ="container">
+  <!-- <div id ="animate"></div> -->
+  <div id = "animate">
+    <!-- <img src=/ball.png alt="" width="100%" height="100%"> -->
+    <img src=/mrm.png alt="" width="100%" height="100%">
+
+  </div>
+</div>
+
+<!-- <script>
+function myMove() {
+  let id = null;
+  const elem = document.getElementById("animate");   
+  let pos = 0;
+  clearInterval(id);
+  id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + "px"; 
+      elem.style.left = pos + "px"; 
+    }
+  }
+}
+</script> -->
+
 </body>
 </html>
