@@ -1,3 +1,4 @@
+/*AJAX?*/
 var tableData = [
     {name:"HIF", points:9}
     ,{name:"DIF", points:6}
