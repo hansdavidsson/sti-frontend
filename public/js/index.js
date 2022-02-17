@@ -20,6 +20,7 @@ function createTable(data){
     aTable.appendChild(createRow(data[1].name, data[1].points, data[1].logo))
     aTable.appendChild(createRow(data[2].name, data[2].points, data[2].logo))
     aTable.appendChild(createRow(data[3].name, data[3].points, data[3].logo))
+    aTable.appendChild(createRow(data[4].name, data[4].points, data[4].logo))
 }
 
 function createRow(name, points, url){
