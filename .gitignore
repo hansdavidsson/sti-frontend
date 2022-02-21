@@ -108,13 +108,3 @@ dist
 public/.DS_Store
 public/js/.DS_Store
 
-# Private
-list.txt
-game.js
-game.css
-pong*.*
-clone.*
-mrm*
-ball*
-game*
-css/pong-demo.css
