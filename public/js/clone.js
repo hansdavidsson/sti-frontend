@@ -215,6 +215,9 @@ function loop(){
     bot1.updatePosition(tick)
     render()
     setTimeout(loop,33)
+
+    //TEST
+    //if (img på samma plats som bot +/- 1px BREAK (WIN)
 }
 
 // misc
