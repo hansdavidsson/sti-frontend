@@ -78,12 +78,12 @@ document.addEventListener('keyup',move)
 // create bot
 var bot1 = new Bot(1,18)
 loop()
-var x = document.createElement('IMG');
+/* var x = document.createElement('IMG');
 x.setAttribute("src", "mrm.png");
     x.setAttribute("width", "20");
     x.setAttribute("height", "20");
     x.setAttribute("alt", "The Pulpit Rock");
-    document.body.appendChild(x);
+    document.body.appendChild(x); */
 
 /* var Image: new (width:20px number, height:20px number) => HTMLImageElement */
 
@@ -100,22 +100,47 @@ x.setAttribute("src", "mrm.png");
 /* function displayResult() {
     document.getElementById("myHeader").innerHTML = "Have a nice day!"
   }  */
-  .meeseek{
+/*   .meeseek{
     <img src="mrm.png" alt="Girl in a jacket" width="25" height="25"></img>
-}
+ } */
+ /* let img = document.createElement("img");
+ img.src = source.getAttribute('mrm.png');
+ document.getElementByID("target").appendChild(img); */
+
+/*  function add_img() { 
+	var img = document.createElement('img'); 
+    img.src = 'mrm.png'; 
+	document.getElementById('body').appendChild(img);
+} */
+/* const img = document.querySelector("img"); 
+img.src = "mrm.png"; */
+
+/* const img = new Image(25, 25); // width, height
+img.src = "mrm.png";
+document.body.appendChild(img); */
+
 
 function render(){
     document.getElementById('game-display').innerHTML = '<div id="grid-container"></div>'
+    const img = new Image(25, 25); // width, height
+img.src = "mrm.png";
     for(let i = 0; i < map.length; i++){
+        
         for(let j = 0; j < map[i].length; j++){
             var container = document.getElementById('grid-container')
             var square = document.createElement('div')
+            /* var image = document.createElementBy('div') */
+
+            /* const img = new Image(25, 25); // width, height
+img.src = "mrm.png"; */
+/* document.body.appendChild(img); */
 
             if(map[i][j] == 1) square.classList.add('square')
             if(map[i][j] == 0) square.classList.add('square-walls')
             /* if(map[i][j] == 2) square.classList.add('square-filled-yellow') */
             /* if(map[i][j] == 2) square.classList.add('mrMee()') */
-            if(map[i][j] == 2) meeseek.add('mrm.png')
+           /*  if(map[i][j] == 2) square.classList.add('img') */
+            if(map[i][j] == 2) square.appendChild(img);
             if(map[i][j] == 3) square.classList.add('square-filled-red')
 
             container.append(square)
