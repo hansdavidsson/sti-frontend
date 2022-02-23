@@ -233,8 +233,9 @@ function move(e){
             
             console.log('BOOOM!')
             /* if(bot1.updatePosition < e.updatePosition) { */
-            bot1.deadBot()
+            /* bot1.deadBot() */
             /* } */
+            square.classList.add('square-filled-red')
         }
         else{
             console.log('No frags remain!')
