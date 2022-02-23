@@ -16,6 +16,29 @@ body{
     height: 500px;
     border: solid black;
 }
+#intropic{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#playmebtn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+#demo{
+    outline-style: solid;
+    outline-color:rgba(0, 241, 129, 0.678);
+    outline-width: 1px;
+    margin: 0px;
+    width: 250px;
+    height: 25px;
+    background-color: #4436c0;
+    
+}
 
 .square{
     outline-style: solid;
@@ -30,12 +53,12 @@ body{
 
 .square-walls{
     outline-style: solid;
-    outline-color:rgba(0, 241, 129, 0.678);
+    outline-color:rgba(139, 140, 194, 0.678);
     outline-width: 1px;
     margin: 0px;
     width: 25px;
     height: 25px;
-    background-color: rgba(0, 241, 129, 0.678)
+    background-color: rgba(79, 119, 194, 0.678)
 }
 
 .square-filled-red{
