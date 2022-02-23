@@ -1,5 +1,3 @@
-/* const { get } = require("express/lib/response") */
-
 class Bot{
     constructor(py,px){
         this.py = py
@@ -78,88 +76,37 @@ map[row][col] = 2
 document.addEventListener('keyup',move)
 
 // create bot
-var bot1 = new Bot(1,18)
+var bot1 = new Bot(18,18)
 loop()
-/* var x = document.createElement('IMG');
-x.setAttribute("src", "mrm.png");
-    x.setAttribute("width", "20");
-    x.setAttribute("height", "20");
-    x.setAttribute("alt", "The Pulpit Rock");
-    document.body.appendChild(x); */
 
-/* var Image: new (width:20px number, height:20px number) => HTMLImageElement */
-
-/* #mrm {
-<Img>*/
-/* #meeseek {
-
-<img src="mrm.png" alt="Girl in a jacket" width="25" height="25"></img>
-<img src="img_chania.jpg" alt="Flowers in Chania"></img>
-
-} */
-
-
-/* function displayResult() {
-    document.getElementById("myHeader").innerHTML = "Have a nice day!"
-  }  */
-/*   .meeseek{
-    <img src="mrm.png" alt="Girl in a jacket" width="25" height="25"></img>
- } */
- /* let img = document.createElement("img");
- img.src = source.getAttribute('mrm.png');
- document.getElementByID("target").appendChild(img); */
-
-/*  function add_img() { 
-	var img = document.createElement('img'); 
-    img.src = 'mrm.png'; 
-	document.getElementById('body').appendChild(img);
-} */
-/* const img = document.querySelector("img"); 
-img.src = "mrm.png"; */
-
-/* const img = new Image(25, 25); // width, height
-img.src = "mrm.png";
-document.body.appendChild(img); */
 
 
 function render(){
     document.getElementById('game-display').innerHTML = '<div id="grid-container"></div>'
     const img = new Image(25, 25); // width, height
-img.src = "mrm.png";
-    for(let i = 0; i < map.length; i++){
-        
+    img.src = "mrm.png";
+
+    const imgBot = new Image(25, 25); // width, height
+    imgBot.src = "skull.png";
+
+    for(let i = 0; i < map.length; i++){     
         for(let j = 0; j < map[i].length; j++){
             var container = document.getElementById('grid-container')
             var square = document.createElement('div')
-            /* var image = document.createElementBy('div') */
-
-           
-
-            /* const img = new Image(25, 25); // width, height
-img.src = "mrm.png"; */
-/* document.body.appendChild(img); */
-
+         
             if(map[i][j] == 1) square.classList.add('square')
             if(map[i][j] == 0) square.classList.add('square-walls')
             /* if(map[i][j] == 2) square.classList.add('square-filled-yellow') */
-            /* if(map[i][j] == 2) square.classList.add('mrMee()') */
-           /*  if(map[i][j] == 2) square.classList.add('img') */
             if(map[i][j] == 2) square.appendChild(img);
-            if(map[i][j] == 3) square.classList.add('square-filled-red')
+            if(map[i][j] == 3) square.appendChild(imgBot);
+            /* if(map[i][j] == 3) square.classList.add('square-filled-red') */
 
             container.append(square)
         }
     }
 }
 
-/* function mrMee() {
-    var x = document.createElement("IMG");
-    x.setAttribute("src", "mrm.png");
-    x.setAttribute("width", "20");
-    x.setAttribute("height", "20");
-    x.setAttribute("alt", "The Pulpit Rock");
-    document.body.appendChild(x);
-  } */
+
 
 function move(e){
     // up w - 87
@@ -177,49 +124,18 @@ function move(e){
         case 87: // w
         
         if(map[row-1][col] == 1) row--
-
-        
-        /* if(Bot1.px <= e.px) {
-        console.log('No frags remain!')
-        } */
-        
-        
-
-        /* if (e.px <= bot1.px+1) {
-            // pacman and ghost #i collide
-            console.log('No frags remain!')
-        } */
-        
-        /* if (isCollision(e.posx,e.posy, bot1.posx+5,bot1.posy+5, 25)) {
-            // pacman and ghost #i collide
-            console.log('No frags remain!')
-        } */
-        
-        
         break
 
         case 83: // s
         if(map[row+1][col] == 1) row++
-        /* if(this.px <= bot1.px) console.log('No frags remain!')
-        if(this.py <= bot1.py) console.log('No frags remain!') */
-        /* isCollision(); */
-        
         break
 
         case 65: // a
         if(map[row][col-1] == 1) col--
-        /* if(this.px <= bot1.px) console.log('No frags remain!')
-        if(this.py <= bot1.py) console.log('No frags remain!') */
-        /* isCollision(); */
-        
         break
 
         case 68: // d
         if(map[row][col+1] == 1) col++
-        /* if(this.px <= bot1.px) console.log('No frags remain!')
-        if(this.py <= bot1.py) console.log('No frags remain!') */
-        /* isCollision(); */
-        
         break
 
         case 71: // g
@@ -232,44 +148,13 @@ function move(e){
             frag--
             
             console.log('BOOOM!')
-            /* if(bot1.updatePosition < e.updatePosition) { */
-            /* bot1.deadBot() */
-            /* } */
-            square.classList.add('square-filled-red')
+            
         }
         else{
             console.log('No frags remain!')
         }
         break
-
-       /*  function isCollision(px1,py1,px2,py2, radius) { */
-       /*  function isCollision(px1,py1,px2,py2, radius) {
-           /*  console.log('No frags remain!') */
-           /* if (bot1=[row-1][col]) { */
-            // pacman and ghost #i collide
-           /*  console.log('No frags remain!') */
-        /* }
-            
-            return (Math.abs(px1-px2)+Math.abs(py1-py2)<radius);
-        }   */ 
-        /* if (isCollision(bot1.px1,bot1.py1, img.px2,img.py2, 25)) {
-            // pacman and ghost #i collide
-            console.log('No frags remain!')
-        } */
-
-        
-        function isCollision() {
-            
-            if (e.px,e.py <= bot1.px+1,bot1.py+1) {
-                // pacman and ghost #i collide
-                console.log('No frags remain!')
-            }
-            /* return (Math.abs(x1-x2)+Math.abs(y1-y2)<radius); */
-        }
-    
-        
-            
-        
+ 
     }
 
     //put player on new pos
@@ -286,50 +171,23 @@ function loop(){
     bot1.updatePosition(tick)
     render()
     setTimeout(loop,33)
-
-    //TEST
-    //if (img på samma plats som bot +/- 1px BREAK (WIN)
 }
 
-function deadBot(){
-    
-        /* const wait = 0 */
-        
-        // remove bot from existing pos
-        map[this.py][this.px] = 1
-        
-        
-    
-    
-    
-
-    //TEST
-    //if (img på samma plats som bot +/- 1px BREAK (WIN)
+function isCollision(x1,y1,x2,y2, radius) {
+    return (Math.abs(x1-x2)+Math.abs(y1-y2)<radius);
 }
+
+if (isCollision(map.posx,map.posy, bot1.posx,bot1.posy, 25)) {
+    // pacman and ghost #i collide
+}
+
+
 
 // misc
 function randomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-/* function setTimeout() {
 
-} */
-
-/* var timeleft = 10;
-var downloadTimer = setInterval(function(){
-  if(timeleft <= 0){
-    clearInterval(downloadTimer);
-  }
-  document.getElementById("progressBar").value = 10 - timeleft;
-  timeleft -= 1;
-}, 1000);
-{/* <progress value="0" max="10" id="progressBar">
-
-</progress> */
-
-/* function makeAlert(){ 
-    alert("Popup window!");
-}; */
 
 
 ProgressCountdown(10, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => alert(`Time's up!: ${value}.`));
