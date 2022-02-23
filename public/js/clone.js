@@ -1,3 +1,5 @@
+/* const { get } = require("express/lib/response") */
+
 class Bot{
     constructor(py,px){
         this.py = py
@@ -131,6 +133,8 @@ img.src = "mrm.png";
             var square = document.createElement('div')
             /* var image = document.createElementBy('div') */
 
+           
+
             /* const img = new Image(25, 25); // width, height
 img.src = "mrm.png"; */
 /* document.body.appendChild(img); */
@@ -171,19 +175,51 @@ function move(e){
     // add boundry check
     switch(e.keyCode){
         case 87: // w
+        
         if(map[row-1][col] == 1) row--
+
+        
+        /* if(Bot1.px <= e.px) {
+        console.log('No frags remain!')
+        } */
+        
+        
+
+        /* if (e.px <= bot1.px+1) {
+            // pacman and ghost #i collide
+            console.log('No frags remain!')
+        } */
+        
+        /* if (isCollision(e.posx,e.posy, bot1.posx+5,bot1.posy+5, 25)) {
+            // pacman and ghost #i collide
+            console.log('No frags remain!')
+        } */
+        
+        
         break
 
         case 83: // s
         if(map[row+1][col] == 1) row++
+        /* if(this.px <= bot1.px) console.log('No frags remain!')
+        if(this.py <= bot1.py) console.log('No frags remain!') */
+        /* isCollision(); */
+        
         break
 
         case 65: // a
         if(map[row][col-1] == 1) col--
+        /* if(this.px <= bot1.px) console.log('No frags remain!')
+        if(this.py <= bot1.py) console.log('No frags remain!') */
+        /* isCollision(); */
+        
         break
 
         case 68: // d
         if(map[row][col+1] == 1) col++
+        /* if(this.px <= bot1.px) console.log('No frags remain!')
+        if(this.py <= bot1.py) console.log('No frags remain!') */
+        /* isCollision(); */
+        
         break
 
         case 71: // g
@@ -194,11 +230,45 @@ function move(e){
                 }
             }
             frag--
+            
+            console.log('BOOOM!')
+            /* if(bot1.updatePosition < e.updatePosition) { */
+            bot1.deadBot()
+            /* } */
         }
         else{
             console.log('No frags remain!')
         }
         break
+
+       /*  function isCollision(px1,py1,px2,py2, radius) { */
+       /*  function isCollision(px1,py1,px2,py2, radius) {
+           /*  console.log('No frags remain!') */
+           /* if (bot1=[row-1][col]) { */
+            // pacman and ghost #i collide
+           /*  console.log('No frags remain!') */
+        /* }
+            
+            return (Math.abs(px1-px2)+Math.abs(py1-py2)<radius);
+        }   */ 
+        /* if (isCollision(bot1.px1,bot1.py1, img.px2,img.py2, 25)) {
+            // pacman and ghost #i collide
+            console.log('No frags remain!')
+        } */
+
+        
+        function isCollision() {
+            
+            if (e.px,e.py <= bot1.px+1,bot1.py+1) {
+                // pacman and ghost #i collide
+                console.log('No frags remain!')
+            }
+            /* return (Math.abs(x1-x2)+Math.abs(y1-y2)<radius); */
+        }
+    
+        
+            
+        
     }
 
     //put player on new pos
@@ -215,6 +285,22 @@ function loop(){
     bot1.updatePosition(tick)
     render()
     setTimeout(loop,33)
+
+    //TEST
+    //if (img på samma plats som bot +/- 1px BREAK (WIN)
+}
+
+function deadBot(){
+    
+        /* const wait = 0 */
+        
+        // remove bot from existing pos
+        map[this.py][this.px] = 1
+        
+        
+    
+    
+    
 
     //TEST
     //if (img på samma plats som bot +/- 1px BREAK (WIN)
@@ -262,6 +348,8 @@ function ProgressCountdown(timeleft, bar, text) {
     }, 1000);
   });
 }
+
+
 
 
 
