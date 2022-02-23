@@ -1,3 +1,16 @@
+function play() {
+    var audio2 = new Audio('https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3');
+    audio2.play();
+  }
+
+/*   function isCollision(x1,y1,x2,y2, radius) {
+    return (Math.abs(x1-x2)+Math.abs(y1-y2)<radius);
+}
+
+if (isCollision(map.posx,map.posy, bot1.posx,bot1.posy, 25)) {
+    // pacman and ghost #i collide
+} */
+
 class Bot{
     constructor(py,px){
         this.py = py
@@ -37,7 +50,7 @@ class Bot{
 // current box size 25x25
 
 // initial position
-var row = 1
+var row = 10
 var col = 1
 var frag = 3
 // initialise grid
@@ -148,6 +161,8 @@ function move(e){
             frag--
             
             console.log('BOOOM!')
+            play();
+            
             
         }
         else{
@@ -207,6 +222,9 @@ function ProgressCountdown(timeleft, bar, text) {
     }, 1000);
   });
 }
+
+
+
 
 
 

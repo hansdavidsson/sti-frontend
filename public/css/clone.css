@@ -82,3 +82,7 @@ body{
     background-color: yellow;
     /* border-radius: 50%; */
 }
+.begin-countdown{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: azure;
+}
