@@ -29,6 +29,16 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     
 }
+
+#thanks{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    font-family: sans-serif;
+    color: azure;
+    
+}
+
 #demo{
     outline-style: solid;
     outline-color:rgba(0, 241, 129, 0.678);

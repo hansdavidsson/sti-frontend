@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <p id="ptag" style="margin:50px">Hello wrold</p>
+
+    <script> 
+        function getOffset(el) {
+          const rect = el.getBoundingClientRect();
+          return {
+            left: rect.left + window.scrollX,
+            top: rect.top + window.scrollY
+        };
+    }
+
+    console.log(getOffset(ptag));
+</script> 
+
+</body>
+</html>

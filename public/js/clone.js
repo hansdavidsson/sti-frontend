@@ -100,7 +100,7 @@ function render(){
     img.src = "mrm.png";
 
     const imgBot = new Image(25, 25); // width, height
-    imgBot.src = "skull.png";
+    imgBot.src = "skull5.png";
 
     for(let i = 0; i < map.length; i++){     
         for(let j = 0; j < map[i].length; j++){
@@ -137,6 +137,10 @@ function move(e){
         case 87: // w
         
         if(map[row-1][col] == 1) row--
+        /* if(tick) */
+        /* if (isCollision(bot1.posx,bot1.posy, img.posx,img.posy, 25)) { */
+            // pacman and ghost #i collide
+        
         break
 
         case 83: // s
@@ -186,13 +190,14 @@ function loop(){
     bot1.updatePosition(tick)
     render()
     setTimeout(loop,33)
+
 }
 
 function isCollision(x1,y1,x2,y2, radius) {
     return (Math.abs(x1-x2)+Math.abs(y1-y2)<radius);
 }
 
-if (isCollision(map.posx,map.posy, bot1.posx,bot1.posy, 25)) {
+if (isCollision(tick.posx,tick.posy, map.posx,map.posy, 25)) {
     // pacman and ghost #i collide
 }
 
@@ -203,7 +208,15 @@ function randomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+/* function getOffset(bot1) {
+    const rect = bot1.getBoundingClientRect();
+    return {
+      left: rect.left + window.scrollX,
+      top: rect.top + window.scrollY
+  };
+}
 
+console.log(getOffset(bot1)); */
 
 ProgressCountdown(10, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => alert(`Time's up!: ${value}.`));
 
@@ -222,6 +235,8 @@ function ProgressCountdown(timeleft, bar, text) {
     }, 1000);
   });
 }
+
+
 
 
 
