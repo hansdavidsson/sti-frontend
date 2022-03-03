@@ -242,7 +242,7 @@ function randomInteger(min, max) {
 
 console.log(getOffset(bot1)); */
 
-ProgressCountdown(10, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => alert(`Time's up!: ${value}.`));
+ProgressCountdown(30, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => alert(`Time's up!: ${value}.`));
 
 function ProgressCountdown(timeleft, bar, text) {
   return new Promise((resolve, reject) => {

@@ -96,3 +96,10 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: azure;
 }
+.controls{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 25%;
+    height: 25%;
+    font-size: 50%;
+    color: azure;
+}
