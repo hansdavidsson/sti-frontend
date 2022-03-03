@@ -254,7 +254,7 @@ function ProgressCountdown(timeleft, bar, text) {
 
       if (timeleft <= 0) {
         clearInterval(countdownTimer);
-        resolve(true);
+        resolve("bye bye blackbird!");
       }
     }, 1000);
   });
