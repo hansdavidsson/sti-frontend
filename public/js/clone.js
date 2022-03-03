@@ -1,27 +1,15 @@
-var map = [ 
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,1,1,0,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,0],
-    [0,1,1,1,1,1,0,1,0,1,0,0,1,1,0,0,0,0,1,0],
-    [0,1,0,0,0,1,0,1,0,1,1,0,1,0,0,1,1,1,1,0],
-    [0,1,1,0,1,1,0,1,0,0,1,0,1,0,1,1,0,0,1,0],
-    [0,1,0,0,0,1,0,1,0,1,1,0,1,0,0,0,0,1,1,0],
-    [0,1,1,0,1,1,0,1,0,1,0,0,1,1,1,1,1,1,1,0],
-    [0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,1,0],
-    [0,0,0,0,0,0,1,0,1,0,0,0,1,1,1,1,1,1,1,0],
-    [0,1,1,1,1,1,1,0,1,1,1,0,1,1,0,0,0,0,1,0],
-    [0,1,0,0,0,0,1,0,1,0,1,0,1,1,0,1,1,1,1,0],
-    [0,1,1,0,1,1,1,0,1,1,1,0,1,1,0,1,0,0,1,0],
-    [0,1,1,0,1,0,1,0,0,0,1,0,1,0,0,1,1,1,1,0],
-    [0,1,0,0,1,0,1,1,1,1,1,1,1,1,1,1,0,0,1,0],
-    [0,1,1,1,1,0,1,0,1,1,0,1,0,1,1,1,1,0,1,0],
-    [0,0,1,0,1,1,1,0,1,0,0,1,1,1,0,1,1,0,1,0],
-    [0,1,1,0,0,0,1,0,1,1,0,1,0,1,0,1,0,0,1,0],
-    [0,0,1,1,0,1,1,0,0,1,0,0,0,1,0,1,1,1,1,0],
-    [0,1,1,1,1,1,1,0,1,1,1,1,1,1,0,1,0,0,1,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]        
-]
+function play() {
+    var audio2 = new Audio('https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3');
+    audio2.play();
+  }
 
-render()
+/*   function isCollision(x1,y1,x2,y2, radius) {
+    return (Math.abs(x1-x2)+Math.abs(y1-y2)<radius);
+}
+
+if (isCollision(map.posx,map.posy, bot1.posx,bot1.posy, 25)) {
+    // pacman and ghost #i collide
+} */
 
 class Bot{
     constructor(py,px){
@@ -58,64 +46,51 @@ class Bot{
     }
 }
 
-var tick = 0
+// current grid size 500x500
+// current box size 25x25
 
-// create bot
-var bot1 = new Bot(18,18)
-loop()
+// initial position
+var row = 10
+var col = 1
+var frag = 3
+// initialise grid
+    
+// walls = 0
+// paths = 1
+// player = 2
+// enemy = 3
 
+var map = [ 
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,1,1,0,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,0],
+            [0,1,1,1,1,1,0,1,0,1,0,0,1,1,0,0,0,0,1,0],
+            [0,1,0,0,0,1,0,1,0,1,1,0,1,0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0,1,0,0,1,0,1,0,1,1,0,0,1,0],
+            [0,1,0,0,0,1,0,1,0,1,1,0,1,0,0,0,0,1,1,0],
+            [0,1,1,0,1,1,0,1,0,1,0,0,1,1,1,1,1,1,1,0],
+            [0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,1,0],
+            [0,0,0,0,0,0,1,0,1,0,0,0,1,1,1,1,1,1,1,0],
+            [0,1,1,1,1,1,1,0,1,1,1,0,1,1,0,0,0,0,1,0],
+            [0,1,0,0,0,0,1,0,1,0,1,0,1,1,0,1,1,1,1,0],
+            [0,1,1,0,1,1,1,0,1,1,1,0,1,1,0,1,0,0,1,0],
+            [0,1,1,0,1,0,1,0,0,0,1,0,1,0,0,1,1,1,1,0],
+            [0,1,0,0,1,0,1,1,1,1,1,1,1,1,1,1,0,0,1,0],
+            [0,1,1,1,1,0,1,0,1,1,0,1,0,1,1,1,1,0,1,0],
+            [0,0,1,0,1,1,1,0,1,0,0,1,1,1,0,1,1,0,1,0],
+            [0,1,1,0,0,0,1,0,1,1,0,1,0,1,0,1,0,0,1,0],
+            [0,0,1,1,0,1,1,0,0,1,0,0,0,1,0,1,1,1,1,0],
+            [0,1,1,1,1,1,1,0,1,1,1,1,1,1,0,1,0,0,1,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]        
+        ]
+// render at initial position
+map[row][col] = 2
 
 // event listner
 document.addEventListener('keyup',move)
 
-class Player{
-    constructor(py,px){
-        this.py = py
-        this.px = px
-        map[this.py][this.px] = 2
-    }
-
-
-    function move(e){
-
-        // remove player from existing pos
-        map[this.py][this.px] = 1
-        
-            switch(e.keyCode){
-        
-                case 87: // w
-                if(map[this.px-1][this.py] == 1) this.px--   
-                break
-        
-                case 83: // s
-                if(map[this.px+1][this.py] == 1) this.px++
-                break
-        
-                case 65: // a
-                if(map[this.px][this.py-1] == 1) this.py--
-                break
-        
-                case 68: // d
-                if(map[this.px][this.py+1] == 1) this.py++
-                break
-        
-            }
-        
-            //put player on new pos
-            map[this.py][this.px] = 2
-        }
-    
-
-}
-
-// create player
-var player1 = new Player(10,10)
-
-
-
-
-
-
+// create bot
+var bot1 = new Bot(18,18)
+loop()
 
 
 
@@ -125,7 +100,7 @@ function render(){
     img.src = "mrm.png";
 
     const imgBot = new Image(25, 25); // width, height
-    imgBot.src = "skull5.png";
+    imgBot.src = "skull.png";
 
     for(let i = 0; i < map.length; i++){     
         for(let j = 0; j < map[i].length; j++){
@@ -146,12 +121,89 @@ function render(){
 
 
 
+function move(e){
+    // up w - 87
+    // down s - 83
+    // left a - 65
+    // right d - 68
+    // grenade g- 71
+
+    // remove player from existing pos
+    map[row][col] = 1
+
+    // update player pos
+    // add boundry check
+    switch(e.keyCode){
+        case 87: // w
+        
+        if(map[row-1][col] == 1) row--
+        /* if(tick) */
+        /* if (isCollision(bot1.posx,bot1.posy, img.posx,img.posy, 25)) { */
+            // pacman and ghost #i collide
+
+            /* if(img.hasColision(imgBot)){
+                delete imgBot;
+            } */
+        
+        break
+
+        case 83: // s
+        if(map[row+1][col] == 1) row++
+        break
+
+        case 65: // a
+        if(map[row][col-1] == 1) col--
+        break
+
+        case 68: // d
+        if(map[row][col+1] == 1) col++
+        break
+
+        case 71: // g
+        if(frag>0){
+            for(let i = -1; i <= 1; i++){
+                for(let j = -1; j <= 1; j++){
+                    map[row+i][col+j] = 1
+                }
+            }
+            frag--
+            
+            console.log('BOOOM!')
+            play();
+            
+            
+        }
+        else{
+            console.log('No frags remain!')
+        }
+        break
+ 
+    }
+
+    //put player on new pos
+    map[row][col] = 2
+}
+
+var tick = 0
 
 
 
+/* function isCollision(x1,y1,x2,y2, radius) {
+    return (Math.abs(x1-x2)+Math.abs(y1-y2)<radius);
+}
+
+if (isCollision(tick.posx,tick.posy, map.posx,map.posy, 25)) {
+    // pacman and ghost #i collide
+} */
+
+
+
+// misc
 function randomInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
 
 
 
@@ -172,7 +224,23 @@ function randomInteger(min, max) {
 
 
 
+/* function is_colour_match(self, evil){
+        
+    if(evil[i] < self){
+        return False
+            }
+        } */
+                
 
+/* function getOffset(bot1) {
+    const rect = bot1.getBoundingClientRect();
+    return {
+      left: rect.left + window.scrollX,
+      top: rect.top + window.scrollY
+  };
+}
+
+console.log(getOffset(bot1)); */
 
 ProgressCountdown(10, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => alert(`Time's up!: ${value}.`));
 
@@ -191,3 +259,14 @@ function ProgressCountdown(timeleft, bar, text) {
     }, 1000);
   });
 }
+
+
+
+
+
+
+
+
+
+
+

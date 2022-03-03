@@ -41,7 +41,7 @@ body{
 
 #demo{
     outline-style: solid;
-    outline-color:rgba(0, 241, 129, 0.678);
+    outline-color:rgba(139, 140, 194, 0.678);
     outline-width: 1px;
     margin: 0px;
     width: 250px;
@@ -52,7 +52,7 @@ body{
 
 .square{
     outline-style: solid;
-    outline-color:rgba(0, 241, 129, 0.678);
+    outline-color:rgba(139, 140, 194, 0.678);
     outline-width: 1px;
     margin: 0px;
     width: 25px;
@@ -73,23 +73,23 @@ body{
 
 .square-filled-red{
     outline-style: solid;
-    outline-color:rgba(0, 241, 129, 0.678);
+    outline-color:rgba(139, 140, 194, 0.678);
     outline-width: 1px;
     margin: 0px;
     width: 25px;
     height: 25px;
-    background-color: #ff2d21;
+    background-color: transparent;
     border-radius: 50%;
 }
 
 .square-filled-yellow{
-    /* outline-style: solid;
-    outline-color:rgba(0, 241, 129, 0.678);
+    outline-style: solid;
+    outline-color:rgba(139, 140, 194, 0.678);
     outline-width: 1px;
-    margin: 0px; */
+    margin: 0px;
     width: 25px;
     height: 25px;
-    background-color: yellow;
+    background-color: transparent;
     /* border-radius: 50%; */
 }
 .begin-countdown{
