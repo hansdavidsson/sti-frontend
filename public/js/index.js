@@ -4,7 +4,7 @@ function age(){
     var xhr = new XMLHttpRequest()
     xhr.open("GET", "http://localhost:3001/football?x=" + Math.random)
     console.log("http://localhost:3001/football?x=" + Math.random)
-    //xhr.open("GET", "/js/data.json")
+    xhr.open("GET", "/js/data.json")
     xhr.onload = function(){
         /* console.log(response) */
         var data = JSON.parse(this.response)
